@@ -12,6 +12,9 @@ const btnHold = document.querySelector('.btn--hold');
 const current0El = document.getElementById('current--0');
 const current1El = document.getElementById('current--1');
 const btnInst = document.querySelector('.btn-instruction');
+const modalContainer = document.querySelector('.modal-container');
+const btnClose = document.querySelector('.closebtn');
+const gameBlock = document.querySelector('.main-game');
 
 //VARIABLE DECLARATIONS @ManasDixit
 let currentScore = 0;
@@ -101,4 +104,12 @@ btnHold.addEventListener('click', function () {
 
 btnNew.addEventListener('click', newGame);
 
-btnInst.addEventListener('click', function () {});
+btnInst.addEventListener('click', function () {
+  modalContainer.classList.remove('hidden');
+  gameBlock.classList.add('hidden');
+});
+
+btnClose.addEventListener('click', function () {
+  modalContainer.classList.add('hidden');
+  gameBlock.classList.remove('hidden');
+});
